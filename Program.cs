@@ -4,15 +4,22 @@ using InventoryManagementAPI.Controllers;
 using InventoryManagementAPI.Data;
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container
 builder.Services.AddDbContext<InventoryContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("InventoryDB"))); // Connecting to SQL Server
+    options.UseSqlServer(builder.Configuration.GetConnectionString("InventoryDB")));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Register controllers
 builder.Services.AddControllers(); 
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        policy => policy.AllowAnyOrigin()  // Allow any origin
+                        .AllowAnyMethod()  // Allow any method (GET, POST, etc.)
+                        .AllowAnyHeader()); // Allow any header
+});
 
 var app = builder.Build();
 
@@ -23,7 +30,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("AllowAll");
 app.MapControllers(); 
 
 var summaries = new[]
