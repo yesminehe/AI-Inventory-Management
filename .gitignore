@@ -1,0 +1,19 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Node (Angular)
+node_modules/
+npm-debug.log
+dist/
+.angular/
+.idea/
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
