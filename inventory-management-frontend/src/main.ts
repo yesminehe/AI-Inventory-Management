@@ -1,7 +1,11 @@
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http'; // Import the necessary modules
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+import { InventoryListComponent } from './app/components/inventory-list/inventory-list.component'; // Import your component
+import { withFetch } from '@angular/common/http'; // Import withFetch
 
-bootstrapApplication(AppComponent, appConfig).catch((err) =>
-  console.error(err)
-);
+bootstrapApplication(InventoryListComponent, {
+  providers: [
+    provideHttpClient(withFetch()), // Enable fetch API for better performance
+  ],
+}).catch((err) => console.error(err));
