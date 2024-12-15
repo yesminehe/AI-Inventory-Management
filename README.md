@@ -8,7 +8,6 @@ AI-based Inventory Management System built using .NET, Angular, and AI technolog
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - 
 ## Project Overview
 AI-Inventory-Management is a web application designed to streamline inventory tracking and management. It uses AI to help make predictions and optimize inventory levels. The project utilizes Angular for the frontend, .NET for the backend, and integrates AI techniques for data analysis and automation.
 
