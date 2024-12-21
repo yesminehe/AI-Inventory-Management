@@ -1,0 +1,38 @@
+<p>category-add works!</p>
+<div class="container">
+  <h2>Add Category</h2>
+
+  <!-- Success or error message -->
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+  <div *ngIf="successMessage" class="alert alert-success">
+    {{ successMessage }}
+  </div>
+
+  <!-- Category Form -->
+  <form (ngSubmit)="addCategory()">
+    <div class="form-group">
+      <label for="name">Category Name:</label>
+      <input
+        type="text"
+        id="name"
+        [(ngModel)]="category.Name"
+        name="name"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Category Description:</label>
+      <textarea
+        id="description"
+        [(ngModel)]="category.Description"
+        name="description"
+        class="form-control"
+        required
+      ></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Add Category</button>
+  </form>
+</div>

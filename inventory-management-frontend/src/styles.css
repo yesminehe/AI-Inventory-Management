@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+/* Style for the navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #2d3e50;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* Style for individual nav links */
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 20px;
+  padding: 10px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+/* Change color and apply a hover effect */
+.nav-link:hover {
+  color: #f39c12;
+  transform: scale(1.1);
+}
+
+/* Active link style */
+.nav-link.active {
+  color: #f39c12;
+}
+
+/* Optional: add a subtle animation on hover */
+.nav-link:focus {
+  outline: none;
+  border-bottom: 2px solid #f39c12;
+}

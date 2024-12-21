@@ -1,0 +1,103 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #1f1c2c, #928dab);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Table title */
+.table-title {
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #161616;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Table styling */
+.inventory-table {
+  width: 90%;
+  max-width: 800px;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Table headers */
+.inventory-table th {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #fff;
+  text-align: left;
+  padding: 15px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Table rows */
+.inventory-table td {
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #101010;
+}
+
+.inventory-table tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease;
+}
+
+/* Table row animation */
+.inventory-table tr {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Delete button */
+.delete-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.delete-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Error message */
+.error-message {
+  margin: 20px auto;
+  color: #ff4b2b;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}

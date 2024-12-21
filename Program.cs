@@ -52,6 +52,7 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast")
 .WithOpenApi();
+app.UseDeveloperExceptionPage();
 
 app.Run();
 

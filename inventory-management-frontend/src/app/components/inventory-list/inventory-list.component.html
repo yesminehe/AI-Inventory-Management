@@ -1,5 +1,5 @@
-<h1>Inventory List</h1>
-<table>
+<h1 class="table-title">Inventory List</h1>
+<table class="inventory-table">
   <thead>
     <tr>
       <th>Name</th>
@@ -8,19 +8,17 @@
     </tr>
   </thead>
   <tbody>
-    <!-- Iterate over the inventoryItems array and display each item in a row -->
     <tr *ngFor="let item of inventoryItems">
       <td>{{ item.name }}</td>
       <td>{{ item.description }}</td>
       <td>
-        <!-- Button to trigger deleteItem function -->
-        <button (click)="deleteItem(item.id)">Delete</button>
+        <button class="delete-button" (click)="deleteItem(item.id)">
+          Delete
+        </button>
       </td>
     </tr>
   </tbody>
 </table>
-
-<!-- Error message displayed if there's an error -->
-<div *ngIf="errorMessage" class="error">
+<div *ngIf="errorMessage" class="error-message">
   {{ errorMessage }}
 </div>

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using InventoryManagementAPI.Models;
 using InventoryManagementAPI.Data;
+using System.Runtime.InteropServices;
 namespace InventoryManagementAPI.Controllers
 {
     [Route("api/[controller]")]
@@ -37,9 +38,10 @@ namespace InventoryManagementAPI.Controllers
         }
 
         // POST: api/Categories
-       [HttpPost]
+      [HttpPost]
         public async Task<ActionResult<Category>> PostCategory(Category category)
-        {
+        { 
+            Console.WriteLine("category"+category);
             if (category == null)
             {
                 return BadRequest("Invalid category data.");
@@ -62,12 +64,24 @@ namespace InventoryManagementAPI.Controllers
             {
                 category.InventoryItems = new List<InventoryItem>();
             }
+            
+            try
+                {
+                    _context.Categories.Add(category);
+                    await _context.SaveChangesAsync();
 
-            _context.Categories.Add(category);
-            await _context.SaveChangesAsync();
+                    // Return Created response with the newly created category
+                    return CreatedAtAction(nameof(GetCategory), new { id = category.Id }, category);
+                }
+                catch (Exception ex)
+                {
+                    // Log the exception (logging framework or custom logging can be used here)
+                    Console.Error.WriteLine($"Error occurred while saving the category: {ex.Message}");
 
-            // Return Created response with the newly created category
-            return CreatedAtAction(nameof(GetCategory), new { id = category.Id }, category);
+                    // Return a generic error response
+                    return StatusCode(500, "An error occurred while saving the category. Please try again later.");
+                }
+            
         }
 
         // PUT: api/Categories/5

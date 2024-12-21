@@ -1,13 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>InventoryManagementFrontend</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>InventoryManagementFrontend</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a routerLink="/" routerLinkActive="active" class="nav-link"
+        >Inventory List</a
+      >
+      <a routerLink="/add-category" routerLinkActive="active" class="nav-link"
+        >Add Category</a
+      >
+    </nav>
+    <app-root></app-root>
+  </body>
 </html>

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CommonModule } from '@angular/common'; // Import CommonModule
-
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-inventory-list',
   standalone: true,

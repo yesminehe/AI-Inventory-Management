@@ -1,0 +1,17 @@
+<!-- category-list.component.html -->
+
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="categories.length > 0; else noCategories">
+  <ul>
+    <li *ngFor="let category of categories">
+      {{ category.name }} - {{ category.description }}
+    </li>
+  </ul>
+</div>
+
+<ng-template #noCategories>
+  <p>No categories available.</p>
+</ng-template>
